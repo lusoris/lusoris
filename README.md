@@ -1,18 +1,13 @@
-<p align="center">
-  <img src="assets/gopher-hop.svg" alt="A small gopher hops across the page and back" width="800">
-</p>
-
 ### Hi, I'm Kilian
 
-I build open-source tools for video quality, backend and web frameworks, and for keeping fleets of
-coding agents honest.
+**Open-source tooling for video quality, Go and SvelteKit frameworks, and for keeping fleets of coding agents honest.**
 
-![Go](https://img.shields.io/badge/Go-00ADD8?logo=go&logoColor=white)
-![Python](https://img.shields.io/badge/Python-3776AB?logo=python&logoColor=white)
-![C](https://img.shields.io/badge/C-A8B9CC?logo=c&logoColor=black)
-![Rust](https://img.shields.io/badge/Rust-000000?logo=rust&logoColor=white)
-![TypeScript](https://img.shields.io/badge/TypeScript-3178C6?logo=typescript&logoColor=white)
-![Merged upstream](https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fraw.githubusercontent.com%2Flusoris%2Flusoris%2Fmain%2Fupstream.json&query=%24.merged_total&label=merged%20upstream&color=2ea44f)
+<p>
+  <img src="https://skillicons.dev/icons?i=go,py,c,rust,ts,svelte,kubernetes,linux&perline=8&theme=light#gh-light-mode-only" alt="Go, Python, C, Rust, TypeScript, Svelte, Kubernetes, Linux" height="44">
+  <img src="https://skillicons.dev/icons?i=go,py,c,rust,ts,svelte,kubernetes,linux&perline=8&theme=dark#gh-dark-mode-only" alt="Go, Python, C, Rust, TypeScript, Svelte, Kubernetes, Linux" height="44">
+</p>
+
+[![Merged upstream](https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fraw.githubusercontent.com%2Flusoris%2Flusoris%2Fmain%2Fupstream.json&query=%24.merged_total&label=merged%20upstream&color=2ea44f)](#upstream)
 
 Most of the work lives in a few organisations:
 
@@ -58,7 +53,7 @@ when I have one.
 - Every project states its licence and credits what it builds on.
 - Questions about a project go to that project's discussions.
 
-<sub>The hopping figure is my avatar, a character in the style of the Go gopher. The Go gopher was
-designed by Renee French and is licensed under the Creative Commons Attribution 4.0 licence. The
-upstream section is generated from <a href="upstream.json">upstream.json</a> by
-<a href="tools/render.py">tools/render.py</a>.</sub>
+<sub>My avatar is a character in the style of the Go gopher. The Go gopher was designed by Renee French
+and is licensed under the Creative Commons Attribution 4.0 licence. The tech icons come from
+<a href="https://github.com/tandpfun/skill-icons">skill-icons</a> (MIT). The upstream section is generated from
+<a href="upstream.json">upstream.json</a> by <a href="tools/render.py">tools/render.py</a>.</sub>
