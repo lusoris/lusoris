@@ -1,0 +1,42 @@
+{
+  "read": "2026-10-12",
+  "merged_total": 7,
+  "projects": [
+    {
+      "name": "FFmpeg",
+      "url": "https://ffmpeg.org/",
+      "merged": 1,
+      "logo": "ffmpeg"
+    },
+    {
+      "name": "OpenVINO Model Server",
+      "url": "https://github.com/openvinotoolkit/model_server",
+      "merged": 2,
+      "logo": "openvino"
+    },
+    {
+      "name": "Vulkan Validation Layers",
+      "url": "https://github.com/KhronosGroup/Vulkan-ValidationLayers",
+      "merged": 1,
+      "logo": "vulkan"
+    },
+    {
+      "name": "Paperclip",
+      "url": "https://github.com/paperclipai/paperclip",
+      "merged": 1,
+      "logo": ""
+    },
+    {
+      "name": "Paperclip Aperture",
+      "url": "https://github.com/tomismeta/paperclip-aperture",
+      "merged": 1,
+      "logo": ""
+    },
+    {
+      "name": "Hindsight",
+      "url": "https://github.com/vectorize-io/hindsight",
+      "merged": 1,
+      "logo": ""
+    }
+  ]
+}
