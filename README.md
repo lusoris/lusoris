@@ -3,8 +3,8 @@
 **Open-source tooling for video quality, Go and SvelteKit frameworks, and for keeping fleets of coding agents honest.**
 
 <picture>
-  <source media="(prefers-color-scheme: dark)" srcset="https://skillicons.dev/icons?i=go,py,c,rust,ts,svelte,kubernetes,linux&perline=8&theme=dark">
-  <img src="https://skillicons.dev/icons?i=go,py,c,rust,ts,svelte,kubernetes,linux&perline=8&theme=light" alt="Go, Python, C, Rust, TypeScript, Svelte, Kubernetes, Linux" height="44">
+  <source media="(prefers-color-scheme: dark)" srcset="https://skillicons.dev/icons?i=go%2Cpy%2Cc%2Crust%2Cts%2Csvelte%2Ckubernetes%2Clinux&perline=8&theme=dark">
+  <img src="https://skillicons.dev/icons?i=go%2Cpy%2Cc%2Crust%2Cts%2Csvelte%2Ckubernetes%2Clinux&perline=8&theme=light" alt="Go, Python, C, Rust, TypeScript, Svelte, Kubernetes, Linux" height="44">
 </picture>
 
 [![Merged upstream](https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fraw.githubusercontent.com%2Flusoris%2Flusoris%2Fmain%2Fupstream.json&query=%24.merged_total&label=merged%20upstream&color=2ea44f)](#upstream)
