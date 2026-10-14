@@ -27,7 +27,7 @@ Most of the work lives in a few organisations:
 Fixes that left my own trees and were merged where they belong:
 
 <!-- upstream:start -->
-[![FFmpeg: 1 merged](https://img.shields.io/badge/FFmpeg-1%20merged-2ea44f?logo=ffmpeg&logoColor=white)](https://ffmpeg.org/)
+[![FFmpeg: 2 merged](https://img.shields.io/badge/FFmpeg-2%20merged-2ea44f?logo=ffmpeg&logoColor=white)](https://ffmpeg.org/)
 [![OpenVINO Model Server: 2 merged](https://img.shields.io/badge/OpenVINO%20Model%20Server-2%20merged-2ea44f?logo=openvino&logoColor=white)](https://github.com/openvinotoolkit/model_server)
 [![Vulkan Validation Layers: 1 merged](https://img.shields.io/badge/Vulkan%20Validation%20Layers-1%20merged-2ea44f?logo=vulkan&logoColor=white)](https://github.com/KhronosGroup/Vulkan-ValidationLayers)
 [![Paperclip: 1 merged](https://img.shields.io/badge/Paperclip-1%20merged-2ea44f)](https://github.com/paperclipai/paperclip)
@@ -36,7 +36,7 @@ Fixes that left my own trees and were merged where they belong:
 
 | Project | Merged |
 | :-- | --: |
-| [FFmpeg](https://ffmpeg.org/) | 1 |
+| [FFmpeg](https://ffmpeg.org/) | 2 |
 | [OpenVINO Model Server](https://github.com/openvinotoolkit/model_server) | 2 |
 | [Vulkan Validation Layers](https://github.com/KhronosGroup/Vulkan-ValidationLayers) | 1 |
 | [Paperclip](https://github.com/paperclipai/paperclip) | 1 |
