@@ -1,11 +1,11 @@
 {
-  "read": "2026-10-18",
-  "merged_total": 10,
+  "read": "2026-10-20",
+  "merged_total": 11,
   "projects": [
     {
       "name": "FFmpeg",
       "url": "https://ffmpeg.org/",
-      "merged": 4,
+      "merged": 5,
       "logo": "ffmpeg"
     },
     {
