@@ -1,6 +1,6 @@
 {
-  "read": "2026-10-22",
-  "merged_total": 12,
+  "read": "2026-10-23",
+  "merged_total": 13,
   "projects": [
     {
       "name": "FFmpeg",
@@ -37,6 +37,12 @@
       "url": "https://github.com/vectorize-io/hindsight",
       "merged": 1,
       "logo": ""
+    },
+    {
+      "name": "helm-charts",
+      "url": "https://github.com/intel/helm-charts",
+      "logo": "",
+      "merged": 1
     }
   ]
 }

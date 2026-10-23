@@ -33,6 +33,7 @@ Fixes that left my own trees and were merged where they belong:
 [![Paperclip: 1 merged](https://img.shields.io/badge/Paperclip-1%20merged-2ea44f)](https://github.com/paperclipai/paperclip)
 [![Paperclip Aperture: 1 merged](https://img.shields.io/badge/Paperclip%20Aperture-1%20merged-2ea44f)](https://github.com/tomismeta/paperclip-aperture)
 [![Hindsight: 1 merged](https://img.shields.io/badge/Hindsight-1%20merged-2ea44f)](https://github.com/vectorize-io/hindsight)
+[![helm-charts: 1 merged](https://img.shields.io/badge/helm--charts-1%20merged-2ea44f)](https://github.com/intel/helm-charts)
 
 | Project | Merged |
 | :-- | --: |
@@ -42,6 +43,7 @@ Fixes that left my own trees and were merged where they belong:
 | [Paperclip](https://github.com/paperclipai/paperclip) | 1 |
 | [Paperclip Aperture](https://github.com/tomismeta/paperclip-aperture) | 1 |
 | [Hindsight](https://github.com/vectorize-io/hindsight) | 1 |
+| [helm-charts](https://github.com/intel/helm-charts) | 1 |
 <!-- upstream:end -->
 
 More are in review. I report what I find with a reproduction and a measurement, and I send the fix
