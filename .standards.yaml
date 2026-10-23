@@ -50,3 +50,13 @@ exceptions:
     tool: trivy
     reason: adoption scaffolds no CI job for trivy declared by facet "security:high"; run it in a workflow, or remove this entry
     expires: "2027-01-21"
+overrides:
+  branch_protection:
+    enforce_linear_history: true
+    require_signed_commits: true
+    required_approving_reviewers: 1
+    # Solo-maintained repository (standing policy of 2026-10-09, answer
+    # engine-profile-repo-push-policy-20261023): one maintainer, so no approval
+    # gate; the required count is kept for a later independent review mode.
+    review_mode: single_maintainer
+    dismiss_stale_reviews: true
