@@ -5,7 +5,7 @@ I build open-source tools for measuring video quality, Go and SvelteKit framewor
 ### What I care about
 
 - **Same score everywhere.** A VMAF score should not depend on the GPU it ran on, so every VMAFx backend is tested against the CPU reference.
-- **Fixes go upstream.** What I patch in FFmpeg I also send to FFmpeg; <!-- upstream-count:start -->[15 of my pull requests](#upstream) are merged across 7 projects<!-- upstream-count:end -->.
+- **Fixes go upstream.** What I patch in FFmpeg I also send to FFmpeg; <!-- upstream-count:start -->[16 of my pull requests](#upstream) are merged across 8 projects<!-- upstream-count:end -->.
 - **No result without evidence.** A missing backend fails instead of silently falling back; a check that could not run does not pass.
 - **Look before building.** I study earlier attempts and why they failed first; sometimes the answer is not to build it.
 
@@ -90,6 +90,7 @@ Fixes that left my own trees and were merged where they belong:
 | [Paperclip Aperture](https://github.com/tomismeta/paperclip-aperture) | [1](https://github.com/tomismeta/paperclip-aperture/pulls?q=is%3Apr+is%3Amerged+author%3Alusoris) |
 | [Hindsight](https://github.com/vectorize-io/hindsight) | [1](https://github.com/vectorize-io/hindsight/pulls?q=is%3Apr+is%3Amerged+author%3Alusoris) |
 | [helm-charts](https://github.com/intel/helm-charts) | [1](https://github.com/intel/helm-charts/pulls?q=is%3Apr+is%3Amerged+author%3Alusoris) |
+| [readarr-rresurrected](https://github.com/ricetim/readarr-rresurrected) | [1](https://github.com/ricetim/readarr-rresurrected/pulls?q=is%3Apr+is%3Amerged+author%3Alusoris) |
 <!-- upstream:end -->
 
 code.ffmpeg.org has no merged filter, so the FFmpeg count links to my closed pull requests there: [8 of the 11](https://code.ffmpeg.org/FFmpeg/FFmpeg/pulls?state=closed&poster=1392) are merged.
