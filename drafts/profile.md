@@ -2,6 +2,18 @@
 
 **I build open-source tooling for video quality, Go and SvelteKit frameworks, and for keeping fleets of coding agents honest.**
 
+### How I work
+
+I look for ideas that have worked in another field, then ask where the comparison breaks down. Before building, I study earlier attempts and their failures. That helps me decide what to reuse, what to change and whether the problem needs new software at all.
+
+I weigh the value of a feature against how often people need it and what it will cost them to run and maintain.
+
+### Why
+
+I want these projects to grow into infrastructure that industry helps sustain and everyone can use. Company funding should support maintenance, compatibility and work that benefits the wider community, alongside the features individual sponsors need.
+
+The aim is shared stewardship: public decisions, room for independent contributors and no single sponsor controlling the direction. A developer working alone should have access to the same dependable tools as a large company. The projects should be able to continue beyond my involvement.
+
 ### Vision
 
 I want a video quality score to mean the same on every device, so in VMAFx every GPU backend and SIMD path is checked against the CPU reference scores. Fixes go back where they belong: every fix in ffmpeg-patches is also sent upstream, and [15 of my pull requests](#upstream) are merged across 7 projects. A result counts only with the evidence that shows it: a requested backend that is missing fails instead of falling back silently, and a gate that cannot run is not a passing gate. Every coding agent should follow the same rules, so [Praetor](https://github.com/cordanaLLM/praetor) (said PREE-tor; Latin *praetor*, an elected magistrate of ancient Rome whose rulings set legal precedent) compiles one AGENTS.md per repository into the instruction files of [six coding clients](https://github.com/cordanaLLM/praetor#2-context-transpilation).
