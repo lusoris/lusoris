@@ -6,43 +6,50 @@
       "name": "FFmpeg",
       "url": "https://ffmpeg.org/",
       "merged": 8,
-      "logo": "ffmpeg"
+      "logo": "ffmpeg",
+      "merged_url": "https://code.ffmpeg.org/FFmpeg/FFmpeg/pulls?state=closed&poster=1392"
     },
     {
       "name": "OpenVINO Model Server",
       "url": "https://github.com/openvinotoolkit/model_server",
       "merged": 2,
-      "logo": "openvino"
+      "logo": "openvino",
+      "merged_url": "https://github.com/openvinotoolkit/model_server/pulls?q=is%3Apr+is%3Amerged+author%3Alusoris"
     },
     {
       "name": "Vulkan Validation Layers",
       "url": "https://github.com/KhronosGroup/Vulkan-ValidationLayers",
       "merged": 1,
-      "logo": "vulkan"
+      "logo": "vulkan",
+      "merged_url": "https://github.com/KhronosGroup/Vulkan-ValidationLayers/pulls?q=is%3Apr+is%3Amerged+author%3Alusoris"
     },
     {
       "name": "Paperclip",
       "url": "https://github.com/paperclipai/paperclip",
       "merged": 1,
-      "logo": ""
+      "logo": "",
+      "merged_url": "https://github.com/paperclipai/paperclip/pulls?q=is%3Apr+is%3Amerged+author%3Alusoris"
     },
     {
       "name": "Paperclip Aperture",
       "url": "https://github.com/tomismeta/paperclip-aperture",
       "merged": 1,
-      "logo": ""
+      "logo": "",
+      "merged_url": "https://github.com/tomismeta/paperclip-aperture/pulls?q=is%3Apr+is%3Amerged+author%3Alusoris"
     },
     {
       "name": "Hindsight",
       "url": "https://github.com/vectorize-io/hindsight",
       "merged": 1,
-      "logo": ""
+      "logo": "",
+      "merged_url": "https://github.com/vectorize-io/hindsight/pulls?q=is%3Apr+is%3Amerged+author%3Alusoris"
     },
     {
       "name": "helm-charts",
       "url": "https://github.com/intel/helm-charts",
       "logo": "",
-      "merged": 1
+      "merged": 1,
+      "merged_url": "https://github.com/intel/helm-charts/pulls?q=is%3Apr+is%3Amerged+author%3Alusoris"
     }
   ]
 }
