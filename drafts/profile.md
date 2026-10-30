@@ -1,22 +1,17 @@
 ### Hi, I'm Kilian
 
-**I build open-source tooling for video quality, Go and SvelteKit frameworks, and for keeping fleets of coding agents honest.**
+I build open-source tools for measuring video quality, Go and SvelteKit frameworks, and an engine that keeps AI coding agents on one set of rules.
 
-### How I work
+### What I care about
 
-I look for ideas that have worked in another field, then ask where the comparison breaks down. Before building, I study earlier attempts and their failures. That helps me decide what to reuse, what to change and whether the problem needs new software at all.
+- **Same score everywhere.** A VMAF score should not depend on the GPU it ran on, so every VMAFx backend is tested against the CPU reference.
+- **Fixes go upstream.** What I patch in FFmpeg I also send to FFmpeg; <!-- upstream-count:start -->[15 of my pull requests](#upstream) are merged across 7 projects<!-- upstream-count:end -->.
+- **No result without evidence.** A missing backend fails instead of silently falling back; a check that could not run does not pass.
+- **Look before building.** I study earlier attempts and why they failed first; sometimes the answer is not to build it.
 
-I weigh the value of a feature against how often people need it and what it will cost them to run and maintain.
+### Why sponsor
 
-### Why
-
-I want these projects to grow into infrastructure that industry helps sustain and everyone can use. Company funding should support maintenance, compatibility and work that benefits the wider community, alongside the features individual sponsors need.
-
-The aim is shared stewardship: public decisions, room for independent contributors and no single sponsor controlling the direction. A developer working alone should have access to the same dependable tools as a large company. The projects should be able to continue beyond my involvement.
-
-### Vision
-
-I want a video quality score to mean the same on every device, so in VMAFx every GPU backend and SIMD path is checked against the CPU reference scores. Fixes go back where they belong: every fix in ffmpeg-patches is also sent upstream, and [15 of my pull requests](#upstream) are merged across 7 projects. A result counts only with the evidence that shows it: a requested backend that is missing fails instead of falling back silently, and a gate that cannot run is not a passing gate. Every coding agent should follow the same rules, so [Praetor](https://github.com/cordanaLLM/praetor) (said PREE-tor; Latin *praetor*, an elected magistrate of ancient Rome whose rulings set legal precedent) compiles one AGENTS.md per repository into the instruction files of [six coding clients](https://github.com/cordanaLLM/praetor#2-context-transpilation).
+I want these projects to outlive my involvement: kept up with help from the companies that use them, decided in the open, and just as usable for a solo developer as for a large team.
 
 ### VMAFx
 
@@ -34,30 +29,6 @@ So far: [more than 2,350 merged pull requests](https://github.com/VMAFx/vmafx/pu
 - Next, an AI workstation for training and evaluating the tiny models, once the first goal of [250 USD a month](https://github.com/sponsors/lusoris) is met.
 
 Sponsor through [GitHub Sponsors](https://github.com/sponsors/lusoris).
-
-### How the pieces connect
-
-```mermaid
-flowchart TB
-    praetor["Praetor"]
-    subgraph video ["Video"]
-        ffp["ffmpeg-patches"]
-        vmafx["VMAFx"]
-        pelorus["pelorus"]
-    end
-    ffmpeg["FFmpeg upstream"]
-    subgraph go ["Go"]
-        golusoris["golusoris"]
-        apps["golusoris apps"]
-    end
-    praetor -.->|governs| ffp
-    praetor -.->|governs| vmafx
-    ffp -->|patch series| vmafx
-    ffp -->|patch series| pelorus
-    ffp -->|fixes sent upstream| ffmpeg
-    golusoris -->|framework for| apps
-    pelorus ~~~ golusoris
-```
 
 cordanaLLM is moving: products and tools go to Tekmora (said TEK-mo-ra, from Greek *tekmor*: a set goal, and the sign that shows the way to it), shared libraries and frameworks to Plurano (said plu-RAH-no, from Latin *plures*, many); nothing is deleted.
 
@@ -90,7 +61,7 @@ cordanaLLM is moving: products and tools go to Tekmora (said TEK-mo-ra, from Gre
 
 | Project | What it is |
 | :-- | :-- |
-| [Praetor](https://github.com/cordanaLLM/praetor) | Open governance engine for any repository fleet: one canonical AGENTS.md per repository, compiled into the instruction files of [six coding clients](https://github.com/cordanaLLM/praetor#2-context-transpilation) |
+| [Praetor](https://github.com/cordanaLLM/praetor) | Open governance engine for any repository fleet: one canonical AGENTS.md per repository, compiled into the instruction files of [six coding clients](https://github.com/cordanaLLM/praetor#2-context-transpilation). The name (said PREE-tor) is Latin *praetor*, an elected magistrate of ancient Rome whose rulings set legal precedent. |
 | [Diallak](https://github.com/tekmora/diallak) | Community bot that answers from the documentation and cites it. The name (said dee-AHL-lak) is from Greek *diallaktes*, the impartial mediator. |
 | [nucleus](https://github.com/cordanaLLM/nucleus) | Deterministic Linux kernel builds with hardened configuration |
 
