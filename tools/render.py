@@ -8,6 +8,7 @@ A project links to its own page, never to a single pull request: a link to one w
 project's thread.
 """
 import json
+import re
 import sys
 from pathlib import Path
 from urllib.parse import quote
@@ -15,16 +16,21 @@ from urllib.parse import quote
 ROOT = Path(__file__).resolve().parent.parent
 START, END = "<!-- upstream:start -->", "<!-- upstream:end -->"
 GREEN = "2ea44f"
+SINGLE_ITEM_RE = re.compile(r"/(?:pulls?|issues?)/\d+")
+
+
+def single_item(project):
+    return any(bool(SINGLE_ITEM_RE.search(project.get(k) or "")) for k in ("url", "merged_url"))
 
 
 def badge(project):
     label, message = quote(project["name"].replace("-", "--"), safe=""), quote(f"{project['merged']} merged", safe="")
     logo = f"?logo={project['logo']}&logoColor=white" if project.get("logo") else ""
-    return f"[![{project['name']}: {project['merged']} merged](https://img.shields.io/badge/{label}-{message}-{GREEN}{logo})]({project['url']})"
+    return f"[![{project['name']}: {project['merged']} merged](https://img.shields.io/badge/{label}-{message}-{GREEN}{logo})]({project.get('merged_url', '')})"
 
 
 def section(data):
-    rows = "\n".join(f"| [{p['name']}]({p['url']}) | {p['merged']} |" for p in data["projects"])
+    rows = "\n".join(f"| [{p['name']}]({p['url']}) | [{p['merged']}]({p.get('merged_url', '')}) |" for p in data["projects"])
     badges = "\n".join(badge(p) for p in data["projects"])
     return f"{START}\n{badges}\n\n| Project | Merged |\n| :-- | --: |\n{rows}\n{END}"
 
@@ -33,8 +39,10 @@ def problems(data):
     out = []
     if sum(p["merged"] for p in data["projects"]) != data["merged_total"]:
         out.append("merged_total is not the sum of the projects")
+    out += [f"{p['name']}: missing merged_url" for p in data["projects"]
+            if not p.get("merged_url")]
     out += [f"{p['name']}: link names a single pull request or issue" for p in data["projects"]
-            if "/pull/" in p["url"] or "/pulls/" in p["url"] or "/issues/" in p["url"]]
+            if single_item(p)]
     return out
 
 
@@ -45,8 +53,8 @@ def replace(text, block):
 
 
 def selftest():
-    data = {"merged_total": 3, "projects": [{"name": "A-b", "url": "https://example.org/a", "merged": 1, "logo": "x"},
-                                            {"name": "C d", "url": "https://example.org/c", "merged": 2, "logo": ""}]}
+    data = {"merged_total": 3, "projects": [{"name": "A-b", "url": "https://example.org/a", "merged_url": "https://example.org/a/pulls?q=is%3Amerged", "merged": 1, "logo": "x"},
+                                            {"name": "C d", "url": "https://example.org/c", "merged_url": "https://example.org/c/pulls?q=is%3Amerged", "merged": 2, "logo": ""}]}
     page = f"top\n{START}\nold\n{END}\nbottom\n"
     done = replace(page, section(data))
     cases = [
@@ -56,8 +64,13 @@ def selftest():
         ("no logo, no logo parameter", "C%20d-2%20merged-2ea44f)" in section(data)),
         ("rendering twice changes nothing", replace(done, section(data)) == done),
         ("a wrong total is found", problems(dict(data, merged_total=4)) == ["merged_total is not the sum of the projects"]),
-        ("a pull request link is found", len(problems({"merged_total": 1, "projects": [{"name": "X", "url": "https://github.com/o/r/pull/1", "merged": 1}]})) == 1),
         ("good data has no problem", problems(data) == []),
+        ("a row renders name->url and count->merged_url", "| [A-b](https://example.org/a) | [1](https://example.org/a/pulls?q=is%3Amerged) |" in section(data)),
+        ("a badge links merged_url", "](https://example.org/a/pulls?q=is%3Amerged)" in badge(data["projects"][0])),
+        ("a missing merged_url is a problem", "X: missing merged_url" in problems({"merged_total": 1, "projects": [{"name": "X", "url": "https://example.org/x", "merged": 1}]})),
+        ("/pulls?q=... passes", problems({"merged_total": 1, "projects": [{"name": "X", "url": "https://example.org/x", "merged_url": "https://github.com/o/r/pulls?q=is%3Amerged", "merged": 1}]}) == []),
+        ("/pull/12 and /pulls/12 fail", "X: link names a single pull request or issue" in problems({"merged_total": 1, "projects": [{"name": "X", "url": "https://example.org/x", "merged_url": "https://github.com/o/r/pull/12", "merged": 1}]})
+                                     and "X: link names a single pull request or issue" in problems({"merged_total": 1, "projects": [{"name": "X", "url": "https://example.org/x", "merged_url": "https://github.com/o/r/pulls/12", "merged": 1}]})),
     ]
     bad = [name for name, ok in cases if not ok]
     if bad:
