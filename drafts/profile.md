@@ -26,38 +26,25 @@ Sponsor through [GitHub Sponsors](https://github.com/sponsors/lusoris).
 ### How the pieces connect
 
 ```mermaid
-flowchart LR
-    subgraph org_vmafx ["VMAFx"]
-        vmafx["vmafx"]
+flowchart TB
+    praetor["Praetor"]
+    subgraph video ["Video"]
         ffp["ffmpeg-patches"]
+        vmafx["VMAFx"]
         pelorus["pelorus"]
     end
-    subgraph org_golusoris ["golusoris"]
+    ffmpeg["FFmpeg upstream"]
+    subgraph go ["Go"]
         golusoris["golusoris"]
-        goenvoy["goenvoy"]
-        sveltesentio["sveltesentio"]
         apps["golusoris apps"]
     end
-    subgraph org_cordana ["cordanaLLM"]
-        praetor["Praetor"]
-        nucleus["nucleus"]
-    end
-    subgraph org_tekmora ["Tekmora"]
-        diallak["Diallak"]
-    end
-    subgraph org_lusoris ["lusoris"]
-        snatcharr["SnatchArr"]
-    end
-    subgraph upstream ["Upstream"]
-        ffmpeg["FFmpeg"]
-        more["6 more projects"]
-    end
+    praetor -.->|governs| ffp
+    praetor -.->|governs| vmafx
     ffp -->|patch series| vmafx
     ffp -->|patch series| pelorus
     ffp -->|fixes sent upstream| ffmpeg
-    praetor -.->|governs| ffp
-    praetor -.->|governs| vmafx
     golusoris -->|framework for| apps
+    pelorus ~~~ golusoris
 ```
 
 cordanaLLM is moving: products and tools go to Tekmora (said TEK-mo-ra, from Greek *tekmor*: a set goal, and the sign that shows the way to it), shared libraries and frameworks to Plurano (said plu-RAH-no, from Latin *plures*, many); nothing is deleted.
