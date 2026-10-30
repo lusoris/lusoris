@@ -1,40 +1,115 @@
 ### Hi, I'm Kilian
 
-**Open-source tooling for video quality, Go and SvelteKit frameworks, and for keeping fleets of coding agents honest.**
+**I build open-source tooling for video quality, Go and SvelteKit frameworks, and for keeping fleets of coding agents honest.**
 
-<picture>
-  <source media="(prefers-color-scheme: dark)" srcset="https://skillicons.dev/icons?i=go%2Cpy%2Cc%2Crust%2Cts%2Csvelte%2Ckubernetes%2Clinux&perline=8&theme=dark">
-  <img src="https://skillicons.dev/icons?i=go%2Cpy%2Cc%2Crust%2Cts%2Csvelte%2Ckubernetes%2Clinux&perline=8&theme=light" alt="Go, Python, C, Rust, TypeScript, Svelte, Kubernetes, Linux" height="44">
-</picture>
+### How I work
 
-[![Merged upstream](https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fraw.githubusercontent.com%2Flusoris%2Flusoris%2Fmain%2Fupstream.json&query=%24.merged_total&label=merged%20upstream&color=2ea44f)](#upstream)
+I look for ideas that have worked in another field, then ask where the comparison breaks down. Before building, I study earlier attempts and their failures. That helps me decide what to reuse, what to change and whether the problem needs new software at all.
 
-Most of the work lives in a few organisations:
+I weigh the value of a feature against how often people need it and what it will cost them to run and maintain.
 
-| Area | Project | What it is |
-| :-- | :-- | :-- |
-| Video | [VMAFx](https://github.com/VMAFx/vmafx) | Perceptual video quality assessment (VMAF), GPU-accelerated and SIMD-tuned, every backend checked against the CPU scores |
-| Video | [ffmpeg-patches](https://github.com/VMAFx/ffmpeg-patches) | A shared series of FFmpeg fixes, tracked against FFmpeg master and sent upstream |
-| Go | [golusoris](https://github.com/golusoris/golusoris) | A composable Go framework: opt-in modules for what a production backend needs |
-| Go | [goenvoy](https://github.com/golusoris/goenvoy) | Go client libraries for media automation, metadata and download APIs |
-| Web | [sveltesentio](https://github.com/golusoris/sveltesentio) | A composable SvelteKit framework with opt-in modules |
-| Agents | [Praetor](https://github.com/cordanaLLM/praetor) | Repository rules as code and one engine that holds every coding agent to them |
-| Systems | [nucleus](https://github.com/cordanaLLM/nucleus) | A deterministic Linux kernel build with hardened configuration fragments |
-| Media | [SnatchArr](https://github.com/lusoris/SnatchArr) | Finds missing media across *arr instances while respecting hourly caps |
+### Why
+
+I want these projects to grow into infrastructure that industry helps sustain and everyone can use. Company funding should support maintenance, compatibility and work that benefits the wider community, alongside the features individual sponsors need.
+
+The aim is shared stewardship: public decisions, room for independent contributors and no single sponsor controlling the direction. A developer working alone should have access to the same dependable tools as a large company. The projects should be able to continue beyond my involvement.
+
+### Vision
+
+I want a video quality score to mean the same on every device, so in VMAFx every GPU backend and SIMD path is checked against the CPU reference scores. Fixes go back where they belong: every fix in ffmpeg-patches is also sent upstream, and [15 of my pull requests](#upstream) are merged across 7 projects. A result counts only with the evidence that shows it: a requested backend that is missing fails instead of falling back silently, and a gate that cannot run is not a passing gate. Every coding agent should follow the same rules, so [Praetor](https://github.com/cordanaLLM/praetor) (said PREE-tor; Latin *praetor*, an elected magistrate of ancient Rome whose rulings set legal precedent) compiles one AGENTS.md per repository into the instruction files of [six coding clients](https://github.com/cordanaLLM/praetor#2-context-transpilation).
+
+### VMAFx
+
+[VMAFx](https://github.com/VMAFx/vmafx) is a fork of [Netflix/vmaf](https://github.com/Netflix/vmaf). VMAF (Video Multi-Method Assessment Fusion) is Netflix's perceptual video quality metric; VMAFx keeps Netflix's reference scores, and the [three Netflix reference pairs](https://github.com/VMAFx/vmafx#-why-vmafx) are a required CI gate.
+
+It adds GPU backends (CUDA, SYCL, HIP, Metal) and SIMD paths (AVX2, AVX-512, NEON, SVE2), each checked against the CPU scores, and ships ONNX tiny models with a signed registry, an MCP server, FFmpeg filters, a Kubernetes operator, and Go and Rust bindings.
+
+So far: [more than 2,350 merged pull requests](https://github.com/VMAFx/vmafx/pulls?q=is%3Apr+is%3Amerged) and [three release candidates](https://github.com/VMAFx/vmafx/releases), the newest v1.0.0-rc.3; no stable release yet.
+
+**What funding unlocks**
+
+- CI time, the largest running cost: the Linux, Windows and macOS build matrix, the numerical-exactness gates and the sanitizer jobs.
+- Regular cloud GPU test runs on hardware I do not own, so every GPU backend keeps being checked against the CPU reference.
+- The two FFmpeg filter parity checks that cannot run in CI today: hqdn3d_cuda needs an NVIDIA device, and the Metal filters need an Apple host.
+- Next, an AI workstation for training and evaluating the tiny models, once the first goal of [250 USD a month](https://github.com/sponsors/lusoris) is met.
+
+Sponsor through [GitHub Sponsors](https://github.com/sponsors/lusoris).
+
+### How the pieces connect
+
+```mermaid
+flowchart TB
+    praetor["Praetor"]
+    subgraph video ["Video"]
+        ffp["ffmpeg-patches"]
+        vmafx["VMAFx"]
+        pelorus["pelorus"]
+    end
+    ffmpeg["FFmpeg upstream"]
+    subgraph go ["Go"]
+        golusoris["golusoris"]
+        apps["golusoris apps"]
+    end
+    praetor -.->|governs| ffp
+    praetor -.->|governs| vmafx
+    ffp -->|patch series| vmafx
+    ffp -->|patch series| pelorus
+    ffp -->|fixes sent upstream| ffmpeg
+    golusoris -->|framework for| apps
+    pelorus ~~~ golusoris
+```
+
+cordanaLLM is moving: products and tools go to Tekmora (said TEK-mo-ra, from Greek *tekmor*: a set goal, and the sign that shows the way to it), shared libraries and frameworks to Plurano (said plu-RAH-no, from Latin *plures*, many); nothing is deleted.
+
+### Projects
+
+<details>
+<summary>Video: VMAFx, ffmpeg-patches, pelorus</summary>
+
+| Project | What it is |
+| :-- | :-- |
+| [VMAFx](https://github.com/VMAFx/vmafx) | Perceptual video quality assessment (VMAF), GPU-accelerated and SIMD-tuned, every backend checked against the CPU scores |
+| [ffmpeg-patches](https://github.com/VMAFx/ffmpeg-patches) | One shared series of [39 FFmpeg fixes](https://github.com/VMAFx/ffmpeg-patches/tree/main/patches) in git format-patch form, applied onto one pinned FFmpeg release and sent upstream |
+| [pelorus](https://github.com/VMAFx/pelorus) | GPU pre-encode pipeline, sibling of VMAFx |
+
+</details>
+
+<details>
+<summary>Go and web: golusoris, goenvoy, sveltesentio</summary>
+
+| Project | What it is |
+| :-- | :-- |
+| [golusoris](https://github.com/golusoris/golusoris) | To be renamed columen (said KOL-oo-men; Latin *columen*, the ridge-beam or central pillar that holds a frame together). Composable Go framework: opt-in fx modules for what a production backend needs (config, log, db, http, otel, jobs, cache, auth, k8s) |
+| [goenvoy](https://github.com/golusoris/goenvoy) | Go client libraries for media automation, metadata and download APIs, as zero-dependency modules |
+| [sveltesentio](https://github.com/golusoris/sveltesentio) | Composable SvelteKit framework |
+
+</details>
+
+<details>
+<summary>Agents and systems: Praetor, Diallak, nucleus</summary>
+
+| Project | What it is |
+| :-- | :-- |
+| [Praetor](https://github.com/cordanaLLM/praetor) | Open governance engine for any repository fleet: one canonical AGENTS.md per repository, compiled into the instruction files of [six coding clients](https://github.com/cordanaLLM/praetor#2-context-transpilation) |
+| [Diallak](https://github.com/tekmora/diallak) | Community bot that answers from the documentation and cites it. The name (said dee-AHL-lak) is from Greek *diallaktes*, the impartial mediator. |
+| [nucleus](https://github.com/cordanaLLM/nucleus) | Deterministic Linux kernel builds with hardened configuration |
+
+</details>
+
+<details>
+<summary>Media: SnatchArr</summary>
+
+| Project | What it is |
+| :-- | :-- |
+| [SnatchArr](https://github.com/lusoris/SnatchArr) | Finds missing media across *arr instances while respecting hourly caps |
+
+</details>
 
 ### Upstream
 
 Fixes that left my own trees and were merged where they belong:
 
 <!-- upstream:start -->
-[![FFmpeg: 8 merged](https://img.shields.io/badge/FFmpeg-8%20merged-2ea44f?logo=ffmpeg&logoColor=white)](https://code.ffmpeg.org/FFmpeg/FFmpeg/pulls?state=closed&poster=1392)
-[![OpenVINO Model Server: 2 merged](https://img.shields.io/badge/OpenVINO%20Model%20Server-2%20merged-2ea44f?logo=openvino&logoColor=white)](https://github.com/openvinotoolkit/model_server/pulls?q=is%3Apr+is%3Amerged+author%3Alusoris)
-[![Vulkan Validation Layers: 1 merged](https://img.shields.io/badge/Vulkan%20Validation%20Layers-1%20merged-2ea44f?logo=vulkan&logoColor=white)](https://github.com/KhronosGroup/Vulkan-ValidationLayers/pulls?q=is%3Apr+is%3Amerged+author%3Alusoris)
-[![Paperclip: 1 merged](https://img.shields.io/badge/Paperclip-1%20merged-2ea44f)](https://github.com/paperclipai/paperclip/pulls?q=is%3Apr+is%3Amerged+author%3Alusoris)
-[![Paperclip Aperture: 1 merged](https://img.shields.io/badge/Paperclip%20Aperture-1%20merged-2ea44f)](https://github.com/tomismeta/paperclip-aperture/pulls?q=is%3Apr+is%3Amerged+author%3Alusoris)
-[![Hindsight: 1 merged](https://img.shields.io/badge/Hindsight-1%20merged-2ea44f)](https://github.com/vectorize-io/hindsight/pulls?q=is%3Apr+is%3Amerged+author%3Alusoris)
-[![helm-charts: 1 merged](https://img.shields.io/badge/helm--charts-1%20merged-2ea44f)](https://github.com/intel/helm-charts/pulls?q=is%3Apr+is%3Amerged+author%3Alusoris)
-
 | Project | Merged |
 | :-- | --: |
 | [FFmpeg](https://ffmpeg.org/) | [8](https://code.ffmpeg.org/FFmpeg/FFmpeg/pulls?state=closed&poster=1392) |
@@ -46,8 +121,16 @@ Fixes that left my own trees and were merged where they belong:
 | [helm-charts](https://github.com/intel/helm-charts) | [1](https://github.com/intel/helm-charts/pulls?q=is%3Apr+is%3Amerged+author%3Alusoris) |
 <!-- upstream:end -->
 
-More are in review. I report what I find with a reproduction and a measurement, and I send the fix
-when I have one.
+code.ffmpeg.org has no merged filter, so the FFmpeg count links to my closed pull requests there: [8 of the 11](https://code.ffmpeg.org/FFmpeg/FFmpeg/pulls?state=closed&poster=1392) are merged.
+
+More are in review. I report what I find with a reproduction and a measurement, and I send the fix when I have one.
+
+### Support my work
+
+One GitHub Sponsors profile covers VMAFx and my open-source work in every organisation above. Choose any amount, monthly or once; sponsorship buys no support and no priority.
+
+- GitHub Sponsors: [github.com/sponsors/lusoris](https://github.com/sponsors/lusoris)
+- Open Collective: account pending, link follows.
 
 ### Working with me
 
@@ -55,7 +138,4 @@ when I have one.
 - Every project states its licence and credits what it builds on.
 - Questions about a project go to that project's discussions.
 
-<sub>My avatar is a character in the style of the Go gopher. The Go gopher was designed by Renee French
-and is licensed under the Creative Commons Attribution 4.0 licence. The tech icons come from
-<a href="https://github.com/tandpfun/skill-icons">skill-icons</a> (MIT). The upstream section is generated from
-<a href="upstream.json">upstream.json</a> by <a href="tools/render.py">tools/render.py</a>.</sub>
+<sub>My avatar is a character in the style of the Go gopher. The Go gopher was designed by Renee French and is licensed under the Creative Commons Attribution 4.0 licence. The upstream section is generated from <a href="upstream.json">upstream.json</a> by <a href="tools/render.py">tools/render.py</a>.</sub>
