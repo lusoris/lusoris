@@ -31,8 +31,7 @@ def badge(project):
 
 def section(data):
     rows = "\n".join(f"| [{p['name']}]({p['url']}) | [{p['merged']}]({p.get('merged_url', '')}) |" for p in data["projects"])
-    badges = "\n".join(badge(p) for p in data["projects"])
-    return f"{START}\n{badges}\n\n| Project | Merged |\n| :-- | --: |\n{rows}\n{END}"
+    return f"{START}\n| Project | Merged |\n| :-- | --: |\n{rows}\n{END}"
 
 
 def problems(data):
@@ -59,9 +58,9 @@ def selftest():
     done = replace(page, section(data))
     cases = [
         ("section is replaced, rest kept", done.startswith("top\n") and done.endswith("\nbottom\n") and "old" not in done),
-        ("a dash in a name is escaped for the badge", "/badge/A--b-1%20merged-" in section(data)),
-        ("a space in a name is encoded", "/badge/C%20d-2%20merged-" in section(data)),
-        ("no logo, no logo parameter", "C%20d-2%20merged-2ea44f)" in section(data)),
+        ("a dash in a name is escaped for the badge", "/badge/A--b-1%20merged-" in badge(data["projects"][0])),
+        ("a space in a name is encoded", "/badge/C%20d-2%20merged-" in badge(data["projects"][1])),
+        ("no logo, no logo parameter", "C%20d-2%20merged-2ea44f)" in badge(data["projects"][1])),
         ("rendering twice changes nothing", replace(done, section(data)) == done),
         ("a wrong total is found", problems(dict(data, merged_total=4)) == ["merged_total is not the sum of the projects"]),
         ("good data has no problem", problems(data) == []),
