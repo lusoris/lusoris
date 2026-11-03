@@ -5,7 +5,7 @@ I build open-source tools for measuring video quality, Go and SvelteKit framewor
 ### What I care about
 
 - **Same score everywhere.** A VMAF score should not depend on the GPU it ran on, so every VMAFx backend is tested against the CPU reference.
-- **Fixes go upstream.** What I patch in FFmpeg I also send to FFmpeg; <!-- upstream-count:start -->[16 of my pull requests](#upstream) are merged across 8 projects<!-- upstream-count:end -->.
+- **Fixes go upstream.** What I patch in FFmpeg I also send to FFmpeg; <!-- upstream-count:start -->[17 of my pull requests](#upstream) are merged across 8 projects<!-- upstream-count:end -->.
 - **No result without evidence.** A missing backend fails instead of silently falling back; a check that could not run does not pass.
 - **Look before building.** I study earlier attempts and why they failed first; sometimes the answer is not to build it.
 
@@ -83,7 +83,7 @@ Fixes that left my own trees and were merged where they belong:
 <!-- upstream:start -->
 | Project | Merged |
 | :-- | --: |
-| [FFmpeg](https://ffmpeg.org/) | [8](https://code.ffmpeg.org/FFmpeg/FFmpeg/pulls?state=closed&poster=1392) |
+| [FFmpeg](https://ffmpeg.org/) | [9](https://code.ffmpeg.org/FFmpeg/FFmpeg/pulls?state=closed&poster=1392) |
 | [OpenVINO Model Server](https://github.com/openvinotoolkit/model_server) | [2](https://github.com/openvinotoolkit/model_server/pulls?q=is%3Apr+is%3Amerged+author%3Alusoris) |
 | [Vulkan Validation Layers](https://github.com/KhronosGroup/Vulkan-ValidationLayers) | [1](https://github.com/KhronosGroup/Vulkan-ValidationLayers/pulls?q=is%3Apr+is%3Amerged+author%3Alusoris) |
 | [Paperclip](https://github.com/paperclipai/paperclip) | [1](https://github.com/paperclipai/paperclip/pulls?q=is%3Apr+is%3Amerged+author%3Alusoris) |
