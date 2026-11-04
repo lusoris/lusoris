@@ -1,6 +1,6 @@
 {
-  "read": "2026-11-03",
-  "merged_total": 17,
+  "read": "2026-11-04",
+  "merged_total": 19,
   "projects": [
     {
       "name": "FFmpeg",
@@ -57,6 +57,13 @@
       "logo": "",
       "merged_url": "https://github.com/ricetim/readarr-rresurrected/pulls?q=is%3Apr+is%3Amerged+author%3Alusoris",
       "merged": 1
+    },
+    {
+      "name": "configarr",
+      "url": "https://github.com/raydak-labs/configarr",
+      "logo": "",
+      "merged_url": "https://github.com/raydak-labs/configarr/pulls?q=is%3Apr+is%3Amerged+author%3Alusoris",
+      "merged": 2
     }
   ]
 }
