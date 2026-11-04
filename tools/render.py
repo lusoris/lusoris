@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """Render the upstream section of README.md from upstream.json, so the page and the data cannot drift.
 
-Usage: render.py            rewrite the table and the counts in the Vision sentence, each between its two markers
+Usage: render.py            rewrite the table and the upstream counts, each between its two markers
        render.py --check    exit 1 when README.md differs from what the data gives, or the total is wrong
        render.py selftest
 A project links to its own page, never to a single pull request: a link to one would post a reference into that
@@ -47,7 +47,7 @@ def problems(data):
 
 
 def count_phrase(data):
-    """The counts in the Vision sentence, generated so that sentence and table cannot disagree."""
+    """The upstream counts, generated so that the inline count and the table cannot disagree."""
     return f"{COUNT_START}[{data['merged_total']} of my pull requests](#upstream) are merged across {len(data['projects'])} projects{COUNT_END}"
 
 
@@ -72,7 +72,7 @@ def refused(text, data):
 
 
 def count_cases(data):
-    """The Vision counts: generated, agreeing with the table after a count change, and refused when a marker is missing or misplaced."""
+    """The upstream counts: generated, agreeing with the table after a count change, and refused when a marker is missing or misplaced."""
     page = f"a {COUNT_START}old{COUNT_END} b\n{START}\nold\n{END}\n"
     done = render(page, data)
     more = dict(data, merged_total=4, projects=[*data["projects"], {"name": "E", "url": "https://example.org/e", "merged": 1, "merged_url": "https://example.org/e/pulls?q=is%3Amerged"}])
