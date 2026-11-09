@@ -13,7 +13,7 @@ I'm Kilian (`lusoris`), based in Germany. I have built software with AI coding a
 - **Rules apply to me.** I document standards and automate their checks for my own work.
 - **Understand first.** I study prior attempts, weigh costs and revisit choices when evidence changes.
 - **Measure the result.** I prefer small solutions whose costs and results I can measure.
-- **Contribute upstream.** I send fixes back to their projects; <!-- upstream-count:start -->[26 of my pull requests](#upstream) are merged across 9 projects<!-- upstream-count:end -->.
+- **Contribute upstream.** I send fixes back to their projects; <!-- upstream-count:start -->[27 of my pull requests](#upstream) are merged across 10 projects<!-- upstream-count:end -->.
 
 ### Upstream
 
@@ -31,6 +31,7 @@ Fixes that left my own trees and were merged where they belong:
 | [helm-charts](https://github.com/intel/helm-charts) | [1](https://github.com/intel/helm-charts/pulls?q=is%3Apr+is%3Amerged+author%3Alusoris) |
 | [readarr-rresurrected](https://github.com/ricetim/readarr-rresurrected) | [1](https://github.com/ricetim/readarr-rresurrected/pulls?q=is%3Apr+is%3Amerged+author%3Alusoris) |
 | [configarr](https://github.com/raydak-labs/configarr) | [2](https://github.com/raydak-labs/configarr/pulls?q=is%3Apr+is%3Amerged+author%3Alusoris) |
+| [argo-cd](https://github.com/argoproj/argo-cd) | [1](https://github.com/argoproj/argo-cd/pulls?q=is%3Apr+is%3Amerged+author%3Alusoris) |
 <!-- upstream:end -->
 
 ### Sponsoring
