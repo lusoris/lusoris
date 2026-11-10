@@ -1,6 +1,6 @@
 {
-  "read": "2026-11-08",
-  "merged_total": 26,
+  "read": "2026-11-09",
+  "merged_total": 27,
   "projects": [
     {
       "name": "FFmpeg",
@@ -64,6 +64,13 @@
       "logo": "",
       "merged_url": "https://github.com/raydak-labs/configarr/pulls?q=is%3Apr+is%3Amerged+author%3Alusoris",
       "merged": 2
+    },
+    {
+      "name": "argo-cd",
+      "url": "https://github.com/argoproj/argo-cd",
+      "logo": "",
+      "merged_url": "https://github.com/argoproj/argo-cd/pulls?q=is%3Apr+is%3Amerged+author%3Alusoris",
+      "merged": 1
     }
   ]
 }
