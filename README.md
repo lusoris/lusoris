@@ -13,7 +13,7 @@ I'm Kilian (`lusoris`), based in Germany. I have built software with AI coding a
 - **Rules apply to me.** I document standards and automate their checks for my own work.
 - **Understand first.** I study prior attempts, weigh costs and revisit choices when evidence changes.
 - **Measure the result.** I prefer small solutions whose costs and results I can measure.
-- **Contribute upstream.** I send fixes back to their projects; <!-- upstream-count:start -->[27 of my pull requests](#upstream) are merged across 10 projects<!-- upstream-count:end -->.
+- **Contribute upstream.** I send fixes back to their projects; <!-- upstream-count:start -->[28 of my pull requests](#upstream) are merged across 10 projects<!-- upstream-count:end -->.
 
 ### Upstream
 
@@ -22,7 +22,7 @@ Fixes that left my own trees and were merged where they belong:
 <!-- upstream:start -->
 | Project | Merged |
 | :-- | --: |
-| [FFmpeg](https://ffmpeg.org/) | [16](https://code.ffmpeg.org/FFmpeg/FFmpeg/pulls?state=closed&poster=1392) |
+| [FFmpeg](https://ffmpeg.org/) | [17](https://code.ffmpeg.org/FFmpeg/FFmpeg/pulls?state=closed&poster=1392) |
 | [OpenVINO Model Server](https://github.com/openvinotoolkit/model_server) | [2](https://github.com/openvinotoolkit/model_server/pulls?q=is%3Apr+is%3Amerged+author%3Alusoris) |
 | [Vulkan Validation Layers](https://github.com/KhronosGroup/Vulkan-ValidationLayers) | [1](https://github.com/KhronosGroup/Vulkan-ValidationLayers/pulls?q=is%3Apr+is%3Amerged+author%3Alusoris) |
 | [Paperclip](https://github.com/paperclipai/paperclip) | [1](https://github.com/paperclipai/paperclip/pulls?q=is%3Apr+is%3Amerged+author%3Alusoris) |
