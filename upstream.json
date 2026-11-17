@@ -1,6 +1,6 @@
 {
-  "read": "2026-11-15",
-  "merged_total": 29,
+  "read": "2026-11-17",
+  "merged_total": 30,
   "projects": [
     {
       "name": "FFmpeg",
@@ -70,6 +70,13 @@
       "url": "https://github.com/argoproj/argo-cd",
       "logo": "",
       "merged_url": "https://github.com/argoproj/argo-cd/pulls?q=is%3Apr+is%3Amerged+author%3Alusoris",
+      "merged": 1
+    },
+    {
+      "name": "pact-go",
+      "url": "https://github.com/pact-foundation/pact-go",
+      "logo": "",
+      "merged_url": "https://github.com/pact-foundation/pact-go/pulls?q=is%3Apr+is%3Amerged+author%3Alusoris",
       "merged": 1
     }
   ]
