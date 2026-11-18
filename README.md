@@ -35,6 +35,12 @@ Fixes that left my own trees and were merged where they belong:
 | [pact-go](https://github.com/pact-foundation/pact-go) | [1](https://github.com/pact-foundation/pact-go/pulls?q=is%3Apr+is%3Amerged+author%3Alusoris) |
 <!-- upstream:end -->
 
+### Contact
+
+[![Discord: lusoris](https://img.shields.io/badge/Discord-lusoris-8b5cf6?style=for-the-badge&logo=discord&logoColor=white&labelColor=111a35)](https://discord.com/users/263704810040197130)
+
+Contact: I am [`lusoris`](https://discord.com/users/263704810040197130) on Discord.
+
 ### Sponsoring
 
 You can sponsor my work through [GitHub Sponsors](https://github.com/sponsors/lusoris). Sponsorship buys no support and no priority.
