@@ -37,9 +37,9 @@ Fixes that left my own trees and were merged where they belong:
 
 ### Contact
 
-![Discord: lusoris](https://img.shields.io/badge/Discord-lusoris-8b5cf6?style=for-the-badge&logo=discord&logoColor=white&labelColor=111a35)
+[![Discord: lusoris](https://img.shields.io/badge/Discord-lusoris-8b5cf6?style=for-the-badge&logo=discord&logoColor=white&labelColor=111a35)](https://discord.com/users/263704810040197130)
 
-Contact: I am `lusoris` on Discord. Discord has no public profile address for a username, so search for `lusoris` in Discord to send me a message.
+Contact: I am [`lusoris`](https://discord.com/users/263704810040197130) on Discord.
 
 ### Sponsoring
 
