@@ -1,4 +1,4 @@
-I'm Kilian (`lusoris`), based in Germany. I build software with AI coding agents. I value precision, clear rules and evidence.
+I'm Kilian (`lusoris`), based in Germany. I build software with [AI coding agents](https://github.com/lusoris/lusoris/blob/main/AGENTS.md). I value precision, clear rules and evidence.
 
 ### Goals
 
