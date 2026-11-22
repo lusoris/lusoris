@@ -1,16 +1,16 @@
-I'm Kilian (`lusoris`), based in Germany. I have built software with AI coding agents for about a year, with many good tips from [Lawrence Curtis](https://github.com/lawrencecurtis). I value precision, clear rules and evidence.
+I'm Kilian (`lusoris`), based in Germany. I build software with [AI coding agents](https://github.com/lusoris/lusoris/blob/main/AGENTS.md). I value precision, clear rules and evidence.
 
 ### Goals
 
-- **Consistent video scores.** I want [video quality measurements](https://github.com/VMAFx/vmafx) to agree across CPUs and GPUs so encoder tuning rests on evidence.
-- **AI on less power.** I want to explore [biologically inspired AI](https://github.com/cordanaLLM/20-watts-was-enough) that works within small energy budgets.
-- **Accountable coding agents.** I want written engineering rules checked by machine through [Praetor](https://github.com/cordanaLLM/praetor).
-- **Reusable software.** I want a small ecosystem of composable [Go](https://github.com/golusoris/golusoris) and [SvelteKit](https://github.com/golusoris/sveltesentio) modules.
+- **Consistent video scores.** I want [video quality measurements](https://github.com/vidiko/vmafx) to agree across CPUs and GPUs so encoder tuning rests on evidence.
+- **AI on less power.** I want to explore [biologically inspired AI](https://github.com/tekmora/20-watts-was-enough) that works within small energy budgets.
+- **Accountable coding agents.** I want written engineering rules checked by machine through [Praetor](https://github.com/tekmora/praetor) (said PREE-tor, from the Latin *praetor*, a Roman magistrate whose rulings set legal precedent).
+- **Reusable software.** I want a small ecosystem of composable [Go](https://github.com/plurano/golusoris) and [SvelteKit](https://github.com/plurano/sveltesentio) modules.
 
 ### How I work
 
 - **Details matter.** I treat small inconsistencies as problems worth fixing.
-- **Rules apply to me.** I document standards and automate their checks for my own work.
+- **Rules apply to me.** I document standards and [automate their checks](https://github.com/lusoris/lusoris/blob/main/lefthook.yml) for my own work.
 - **Understand first.** I study prior attempts, weigh costs and revisit choices when evidence changes.
 - **Measure the result.** I prefer small solutions whose costs and results I can measure.
 - **Contribute upstream.** I send fixes back to their projects; <!-- upstream-count:start -->[30 of my pull requests](#upstream) are merged across 11 projects<!-- upstream-count:end -->.
@@ -39,7 +39,7 @@ Fixes that left my own trees and were merged where they belong:
 
 [![Discord: lusoris](https://img.shields.io/badge/Discord-lusoris-8b5cf6?style=for-the-badge&logo=discord&logoColor=white&labelColor=111a35)](https://discord.com/users/263704810040197130)
 
-Contact: I am [`lusoris`](https://discord.com/users/263704810040197130) on Discord.
+I am [`lusoris`](https://discord.com/users/263704810040197130) on Discord.
 
 ### Sponsoring
 
