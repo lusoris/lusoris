@@ -43,6 +43,6 @@ I am [`lusoris`](https://discord.com/users/263704810040197130) on Discord.
 
 ### Sponsoring
 
-You can sponsor my work through [GitHub Sponsors](https://github.com/sponsors/lusoris) or [Patreon](https://www.patreon.com/cw/Lusoris). Your contribution helps cover testing and infrastructure for my public projects. Sponsorship buys no support and no priority.
+My [GitHub Sponsors goal](https://github.com/sponsors/lusoris) is to cover cross-platform CI and GPU test runs for my public projects. You can also contribute through [Patreon](https://www.patreon.com/cw/Lusoris). Sponsorship buys no support and no priority.
 
 <sub>My avatar is a character in the style of the Go gopher. The Go gopher was designed by Renee French and is licensed under the Creative Commons Attribution 4.0 licence. The upstream section is generated from <a href="upstream.json">upstream.json</a> by <a href="tools/render.py">tools/render.py</a>.</sub>
